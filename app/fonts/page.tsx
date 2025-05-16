@@ -54,7 +54,7 @@ const columns = [
 
         const handleDelete = async () => {
           try {
-            await axios.get(`http://192.168.18.140:4001/api/v1/font/delete/${row.row.original.id}`);
+            await axios.get(`http://localhost:3000/api/v1/font/delete/${row.row.original.id}`);
              // Update the table data by removing the deleted item
              setData(prevData => prevData.filter(item => item.id !== row.row.original.id));
           } catch (error) {
@@ -99,7 +99,7 @@ function page() {
     const fetchData = async () => {
       try {
         // Replace 'API_ENDPOINT' with the actual API endpoint you want to fetch data from
-        const response = await axios.get('http://192.168.18.140:4001/api/v1/font');
+        const response = await axios.get('http://localhost:3000/api/v1/font');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

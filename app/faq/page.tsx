@@ -15,7 +15,7 @@ function page() {
     try {
       // Replace 'API_ENDPOINT' with the actual API endpoint you want to fetch data from
       const response = await axios.get(
-        "http://192.168.18.140:4001/api/v1/faqs"
+        "http://localhost:3000/api/v1/faqs"
       );
       setData(response.data);
     } catch (error) {
@@ -26,7 +26,7 @@ function page() {
   const handleDelete = async (row: any) => {
     try {
       await axios.get(
-        `http://192.168.18.140:4001/api/v1/faqs/delete/${row.row.original.id}`
+        `http://localhost:3000/api/v1/faqs/delete/${row.row.original.id}`
       );
       // Update the table data by removing the deleted item
       setData((prevData) =>

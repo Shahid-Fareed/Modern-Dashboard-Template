@@ -63,7 +63,7 @@ function page() {
   
     axios
       .post(
-        `http://192.168.18.140:4001/api/v1/font/create`,
+        `http://localhost:3000/api/v1/font/create`,
         formData,
         {
           headers: {

@@ -20,7 +20,7 @@ const columns = [
       accessor: "featured_image_front",
       Cell: (row) => {
         const imageName = row?.cell?.value;
-        const imageUrl = imageName ? `http://192.168.18.140:4001/product_image/${imageName}` : null;
+        const imageUrl = imageName ? `http://localhost:3000/product_image/${imageName}` : null;
   
         return (
           <span>
@@ -147,7 +147,7 @@ function page() {
     const fetchData = async () => {
       try {
         // Replace 'API_ENDPOINT' with the actual API endpoint you want to fetch data from
-        const response = await axios.get('http://192.168.18.140:4001/api/v1/products');
+        const response = await axios.get('http://localhost:3000/api/v1/products');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

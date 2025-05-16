@@ -65,7 +65,7 @@ function page() {
   
     axios
       .post(
-        `http://192.168.18.140:4001/api/v1/attribute/create`,
+        `http://localhost:3000/api/v1/attribute/create`,
         formData,
         {
           headers: {

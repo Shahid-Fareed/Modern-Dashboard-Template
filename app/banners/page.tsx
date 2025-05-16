@@ -21,7 +21,7 @@ const columns = [
         accessor: "image",
         Cell: (row) => {
           const imageName = row?.cell?.value;
-          const imageUrl = imageName ? `http://192.168.18.140:4001/banner_image/${imageName}` : null;
+          const imageUrl = imageName ? `http://localhost:3000/banner_image/${imageName}` : null;
     
           return (
             <span>
@@ -105,7 +105,7 @@ const columns = [
 
         const handleDelete = async () => {
           try {
-            await axios.get(`http://192.168.18.140:4001/api/v1/banner/delete/${row.row.original.id}`);
+            await axios.get(`http://localhost:3000/api/v1/banner/delete/${row.row.original.id}`);
              // Update the table data by removing the deleted item
              setData(prevData => prevData.filter(item => item.id !== row.row.original.id));
           } catch (error) {
@@ -150,7 +150,7 @@ function page() {
     const fetchData = async () => {
       try {
         // Replace 'API_ENDPOINT' with the actual API endpoint you want to fetch data from
-        const response = await axios.get('http://192.168.18.140:4001/api/v1/banner');
+        const response = await axios.get('http://localhost:3000/api/v1/banner');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
